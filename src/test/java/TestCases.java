@@ -55,6 +55,63 @@ public class TestCases extends BaseTest{
     }
 
 
+    @Order(6)
+    @Test
+    public void test006(){
+        test005();
+        driver.navigate().back();
+        Assertions.assertTrue(homePage.isOnHomePage());
+    }
+
+    @Order(7)
+    @Test
+    public void test007(){
+        test001();
+        homePage.clickOnProductsNdSolutions();
+        Assertions.assertTrue(homePage.isOnHomePage());
+
+    }
+
+    @Order(8)
+    @Test
+    public void test008(){
+        test006();
+        homePage.switchToEnglish();
+        Assertions.assertTrue(homePage.isOnAboutUsEnglish());
+    }
+
+   @Order(9)
+   @Test
+   public void test009(){
+        test003();
+        homePage.clickOnConTactTab();
+        Assertions.assertTrue(homePage.isOnAboutUsEnglish());
+   }
+
+
+   @Order(10)
+   @Test
+   public void test010(){
+
+        test009();
+        driver.navigate().back();
+        Assertions.assertTrue(homePage.isOnTeamPage());
+   }
+
+   @Order(11)
+   @Test
+   public void test011(){
+        test010();
+        homePage.clicOnGoToTopButton();
+        Assertions.assertTrue(homePage.isOnAboutUs());
+
+
+    }
+
+
+
+
+
 
 
 }

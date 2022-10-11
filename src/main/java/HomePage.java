@@ -30,7 +30,9 @@ public class HomePage extends CommonFunctions{
 
     By switchToTurkishlogo=By.xpath("//img[@title='Türkçe']");
 
-    By aboutUsEnglishTitle=By.xpath("//span[contains(text(),'WHO WE ARE')]");
+    By aboutUsEnglishTitle=By.xpath("//a[@title='Home']");
+
+    By goToTopTab=By.xpath("//a[@class='scroll-top-button visible']");
 
 
 
@@ -65,6 +67,8 @@ public class HomePage extends CommonFunctions{
         clickOnElement(productsNdSolutionsTab);
     }
 
+    public void clicOnGoToTopButton(){clickOnElement(goToTopTab);}
+
     public boolean isOnHomePage(){
        return isElementDisplayed(newMindLogo);
     }
@@ -96,4 +100,17 @@ public class HomePage extends CommonFunctions{
     public void switchToTurkish(){
         clickOnElement(switchToTurkishlogo);
     }
+
+
+
+    public void dynamicFunc(String argument){
+        String var1="//a[contains(text(),"+argument+")]";
+
+        By tempArg=By.xpath(var1);
+        clickOnElement(tempArg);
+
+    }
+
+
+
 }
